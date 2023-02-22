@@ -1,0 +1,20 @@
+<div class="row">
+  <div class="col-4 offset-md-4 rounded bg-light p-4">
+    <h1 class="text-center mb-4">Autenticación <i class="bi bi-person-fill-down"></i></h1>
+
+    <form [formGroup]="form" (ngSubmit)="onSubmit()">
+      <div class="form-group">
+        <label for="codigo">Código</label>
+        <input type="text" id="codigo" class="form-control" formControlName="codigo" />
+        <div class="invalid-feedback" *ngIf="codigo.invalid && (codigo.dirty || codigo.touched)">
+          <span *ngIf="codigo.errors?.['required']">Teléfono requerido</span>
+          <span *ngIf="codigo.errors?.['minlength']">Debe tener al menos 4 dígitos</span>
+          <span *ngIf="codigo.errors?.['maxlength']">Debe tener máximo 4 dígitos</span>
+          <span *ngIf="codigo.errors?.['pattern']">Carácter inválido</span>
+        </div>
+      </div>
+
+      <button type="submit" class="btn btn-primary btn-block mt-4">Enviar</button>
+    </form>
+  </div>
+</div>

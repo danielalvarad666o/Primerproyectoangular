@@ -1,0 +1,57 @@
+<div class="row">
+  <div class="col-4 offset-md-4 rounded text-dark bg-light">
+    <h1 class="text-center">Iniciar Session  <i class="bi bi-person-fill-down"></i></h1>
+
+
+
+
+    <form [formGroup]="form" (ngSubmit)="iniciarsession()">
+    <!-- Email input -->
+    <div class="form-outline mb-4">
+      <input type="email" id="form1Example1" class="form-control" formControlName="email" required />
+      <label class="form-label" for="form1Example1">Correo Electronico</label>
+    </div>
+    <div class="alert alert-danger" role="alert" [hidden]="email.valid ||email.pristine">
+      <span *ngIf="email.errors?.['required']">correo necesario</span>
+      <span *ngIf="email.errors?.['email']">EL correo es invalido necesita @ </span>
+    </div>
+    <!-- Password input -->
+    <div class="form-outline mb-4">
+      <input type="password" id="form1Example2" class="form-control"  formControlName="password" />
+      <label class="form-label" for="form1Example2">Password</label>
+      <div class="alert alert-danger" role="alert" [hidden]="password.valid ||password.pristine">
+        <span *ngIf="password.errors?.['required']">contraseña Requerdio</span>
+        <span *ngIf="password.errors?.['minlength']">Debe tener minimo 8 Digitos</span>
+      </div>
+     
+    </div>
+  
+  
+    <!-- Submit button -->
+    <button type="submit" class="btn btn-primary btn-block">Sign in</button>
+      
+        <!-- Register buttons -->
+        <div class="text-center">
+          <p>o registrarse con:</p>
+          <button type="button" class="btn btn-secondary btn-floating mx-1">
+            <i class="bi bi-facebook"></i>
+          </button>
+      
+          <button type="button" class="btn btn-secondary btn-floating mx-1">
+            <i class="bi bi-google"></i>
+          </button>
+      
+          <button type="button" class="btn btn-secondary btn-floating mx-1">
+            <i class="bi bi-twitter"></i>
+          </button>
+      
+          <button type="button" class="btn btn-secondary btn-floating mx-1">
+            <i class="bi bi-github"></i>
+          </button>
+        </div>
+        
+      </form>
+    <br>
+    <br>
+
+</div></div>

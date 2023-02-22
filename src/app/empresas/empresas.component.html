@@ -1,0 +1,17 @@
+
+
+<div class="contener">
+    <div class="row">
+        <div class="col-6 offset-md-3 border border-danger ">
+<form (submit)="llamarempresa($event)">
+    <!-- Name input -->
+    <div class="form-outline mb-4">
+      <input type="text" id="form5Example1" name="nombre" class="form-control" #empresa />
+      <label class="form-label text-white" for="form5Example1">Nombre de la empresa</label>
+    </div>
+    <button type="submit" class="btn btn-primary btn-block mb-4" >Enviar</button>
+  </form>
+</div>
+    </div>
+    <p class="text-white">Empresa: {{nombreEmpresa}}</p>
+</div>
