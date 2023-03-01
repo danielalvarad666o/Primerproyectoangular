@@ -17,9 +17,8 @@ export class RegistrarAvionesComponent {
   
   ngOnInit(): void {
     this.Avionesfrom = this.formBuilder.group({
-      id_piloto: ['', Validators.required],
-      
-      Airoliniea: ['',Validators.required]
+      id_piloto:['',Validators.required],
+      Airolinea: ['',Validators.required]
      
     });
     this.getConductor();
@@ -78,7 +77,7 @@ this.http.get(url1,httpOptions).subscribe(
           'Authorization': `Bearer ${token}`
         })
       };
-      const url = 'http://127.0.0.1:8000/api/conductoryordi/crear1';
+      const url = 'http://127.0.0.1:8000/api/conductoryordi/crear3';
   
       if (this.Avionesfrom.valid) {
         this.http.post(url, this.Avionesfrom.value, httpOptions).subscribe(

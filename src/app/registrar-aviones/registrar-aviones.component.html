@@ -16,7 +16,7 @@
   <div *ngIf="showAlert" class="alert alert-success d-flex align-items-center" role="alert">
     <svg class="bi flex-shrink-0 me-2" width="24" height="24" role="img" aria-label="Success:"><use xlink:href="#check-circle-fill"/></svg>
     <div>
-      se inserto correctamente el hopital 
+      se inserto correctamente el avion 
     </div>
   </div>
   
@@ -28,21 +28,22 @@
   <form [formGroup]="Avionesfrom" (ngSubmit)="onSubmit()">
     <div class="form-group">
       <label for="disabledSelect" class="form-label">Selecionar el paciente</label>
-      <select id="disabledSelect" class="form-select" formControlName=" id_piloto">
-        <option value="" disabled selected>Selecciona el pacinete </option>
+      <select id="disabledSelect" class="form-select" formControlName="id_piloto">
+        
         <option *ngFor="let con of conductor" [value]="con.id">
-          {{ con.nombre_del_seguro }},{{con.A_materno}},{{con.A_paterno}}
+          {{ con.nombre }},{{con.A_materno}},{{con.A_paterno}}
         </option>
       </select>
       <div class="alert alert-danger" role="alert" [hidden]="Avionesfrom.controls['id_piloto'].valid || Avionesfrom.controls['id_piloto'].pristine">
         <span *ngIf="Avionesfrom.controls['id_piloto'].errors?.['required']">El nombre del hopital es requerido.</span>
       </div>
+
     </div>    
       <div class="form-group">
         <label for="ap_materno">Nombre de la Airolinea:</label>
-        <input type="text" id="ap_materno" class="form-control" formControlName="Airoliniea">
-        <div class="alert alert-danger" role="alert" [hidden]="Avionesfrom.controls['Airoliniea'].valid || Avionesfrom.controls['Airoliniea'].pristine">
-          <span *ngIf="Avionesfrom.controls['Airoliniea'].errors?.['required']">El nombre del hopital es requerido.</span>
+        <input type="text" id="ap_materno" class="form-control" formControlName="Airolinea">
+        <div class="alert alert-danger" role="alert" [hidden]="Avionesfrom.controls['Airolinea'].valid || Avionesfrom.controls['Airolinea'].pristine">
+          <span *ngIf="Avionesfrom.controls['Airolinea'].errors?.['required']">El nombre del hopital es requerido.</span>
         </div>
       </div>
     

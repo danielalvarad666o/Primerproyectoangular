@@ -28,6 +28,8 @@ import { ChefComponent } from './chef/chef.component';
 import { IngredientesComponent } from './ingredientes/ingredientes.component';
 import { TipodeplatoComponent } from './tipodeplato/tipodeplato.component';
 import { EditarconductorComponent } from './editarconductor/editarconductor.component';
+import { VeravionComponent } from './veravion/veravion.component';
+import { EditaravionComponent } from './editaravion/editaravion.component';
 
 
 
@@ -42,6 +44,8 @@ const appRoute:Routes=[
 {path:'registrarchef',component:ChefComponent},
 {path:'registrarIngrediente',component:IngredientesComponent},
 { path: 'editarconductor/:id', component: EditarconductorComponent },
+{ path: 'editaravion/:id', component: EditaravionComponent },
+{ path: 'veraviones', component: VeravionComponent },
 
 {path:'verconductor',component:VerconductorComponent
 },
@@ -67,7 +71,9 @@ const appRoute:Routes=[
     ChefComponent,
     IngredientesComponent,
     TipodeplatoComponent,
-    EditarconductorComponent
+    EditarconductorComponent,
+    VeravionComponent,
+    EditaravionComponent
     
     
   ],

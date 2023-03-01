@@ -1,0 +1,19 @@
+<div class="container">
+    <h1>Editar Avión</h1>
+    <form [formGroup]="avionForm" (ngSubmit)="onSubmit()">
+      <div class="form-group">
+        <label for="id_piloto">Piloto:</label>
+        <select formControlName="id_piloto" class="form-control">
+          <option *ngFor="let conductor of conductores" [value]="conductor.id">{{ conductor.nombre }}</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <label for="Airolinea">Aerolínea:</label>
+        <input formControlName="Airolinea" type="text" class="form-control">
+      </div>
+      <button type="submit" class="btn btn-primary">Guardar</button>
+    </form>
+  </div>
+  
+  
+
