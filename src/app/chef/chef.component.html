@@ -1,0 +1,84 @@
+
+<div class="row">
+    <div class="col-4 offset-md-4 rounded text-dark bg-light">
+      <h1 class="text-center">Registrar Chef <i class="bi bi-emoji-wink-fill"></i></h1>
+      <form [formGroup]="form" (ngSubmit)="registrarUsuario()">
+        <div class="form-group">
+          <label for="name">Nombre del chef:</label>
+          <input type="text" class="form-control" formControlName="nombre">
+  
+          <div class="alert alert-danger" role="alert" [hidden]="nombre.valid ||nombre.pristine">
+            <span *ngIf="nombre.errors?.['required']">Nombre obligatorio.</span>
+            <span *ngIf="nombre.errors?.['minlength']">Debe tener minimo 3 Letras</span>
+            <span *ngIf="nombre.errors?.['pattern']">Debe tener puras  letras </span>
+          </div>
+  
+        <div class="form-group">
+          <label for="email">Apellido Paterno:</label>
+          <input type="text" class="form-control" formControlName="ap_paterno" required>
+  
+          
+          <div class="alert alert-danger" role="alert" [hidden]="ap_paterno.valid ||ap_paterno.pristine">
+            <span *ngIf="ap_paterno.errors?.['required']">Ap paterno obligatorio.</span>
+            <span *ngIf="ap_paterno.errors?.['minlength']">Debe tener minimo 3 Letras</span>
+            <span *ngIf="ap_paterno.errors?.['pattern']">Debe tener puras  letras </span>
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="telefono">Apellido Materno:</label>
+          <input type="text" class="form-control" formControlName="ap_materno">
+  
+  
+  
+          <div class="alert alert-danger" role="alert" [hidden]="ap_materno.valid ||ap_materno.pristine">
+            <span *ngIf="ap_materno.errors?.['required']">Ap materno Requerdio</span>
+            <span *ngIf="ap_materno.errors?.['minlength']">Debe tener minimo 3 letras</span>
+            
+            <span *ngIf="ap_materno.errors?.['pattern']">Caracter invalido</span>
+          
+          </div>
+  
+        
+        </div>
+        <div class="form-group">
+            <label for="inputState">Nacionalidad</label>
+            <select id="inputState" class="form-control"  formControlName="nacionalidad" required>
+              <option selected disabled>Selecciona...</option>
+              <option>Mexicana</option>
+              <option>Italiana</option>
+            </select>
+            <div class="alert alert-danger" role="alert" *ngIf="nacionalidad.invalid && (nacionalidad.dirty || nacionalidad.touched)">
+                <span *ngIf="nacionalidad.errors?.['required']">nacionalidad requerida </span>
+            </div>
+
+         
+        </div>
+        <div class="form-group">
+          <label for="confirmacion">Edad:</label>
+          <input type="number" class="form-control" formControlName="edad" name="confirmacion">
+          <div class="alert alert-danger" role="alert" *ngIf="edad.invalid && (edad.dirty || edad.touched)">
+            
+            <span *ngIf="edad.errors?.['required']">edad requerida </span>
+            <span *ngIf="edad.errors?.['pattern']">
+                La edad debe ser un número.
+              </span>
+              <span *ngIf="edad.errors?.['min']">
+                La edad debe ser mayor o igual a 18 años.
+              </span>
+              <span *ngIf="edad.errors?.['max']">
+                La edad debe ser menor o igual a 78 años.
+              </span>
+          </div>
+        </div>
+        
+        <br>
+        <br>
+        <div class="form-group text-center">
+          <button type="submit" class="btn btn-primary">Registrarse</button>
+        </div>
+      </div>
+      </form>
+  
+    </div>
+  </div>
+  

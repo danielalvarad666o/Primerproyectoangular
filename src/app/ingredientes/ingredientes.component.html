@@ -1,0 +1,46 @@
+<div class="row">
+    <div class="col-4 offset-md-4 rounded text-dark bg-light">
+      <h1 class="text-center">Registrar Ingrediente <i class="bi bi-emoji-wink-fill"></i></h1>
+      <form [formGroup]="form" (ngSubmit)="registrarUsuario()">
+        <div class="form-group">
+          <label for="name">Nombre del Ingrediente:</label>
+          <input type="text" class="form-control" formControlName="ingredientes">
+  
+          <div class="alert alert-danger" role="alert" [hidden]="ingredientes.valid ||ingredientes.pristine">
+            <span *ngIf="ingredientes.errors?.['required']">Nombre obligatorio.</span>
+            <span *ngIf="ingredientes.errors?.['pattern']">solo numeros.</span>
+            <span *ngIf="ingredientes.errors?.['max']">es maximo son 6 unidades </span>
+            
+            
+          </div>
+  
+        <div class="form-group">
+          <label for="text">Unidades:</label>
+          <input type="text" class="form-control" formControlName="unidades" required>
+  
+          
+          <div class="alert alert-danger" role="alert" [hidden]="unidades.valid ||unidades.pristine">
+            <span *ngIf="unidades.errors?.['required']">Unidades obligatorio.</span>
+            <span *ngIf="unidades.errors?.['pattern']">solo numeros.</span>
+            <span *ngIf="unidades.errors?.['max']">es maximo son 6 unidades </span>
+            
+            
+            
+          </div>
+        </div>
+      
+  
+   
+        
+        <br>
+        <br>
+        <div class="form-group text-center">
+          <button type="submit" class="btn btn-primary">Registrarse</button>
+        </div>
+      </div>
+      </form>
+  
+    </div>
+  </div>
+  
+

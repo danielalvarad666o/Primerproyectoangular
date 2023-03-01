@@ -4,9 +4,16 @@
 @import 'node_modules/tailwindcss/components.css';
 @import 'node_modules/tailwindcss/base.css';
 @import 'node_modules/tailwindcss/utilities.css';
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+body {
+    background-image: url("https://www.freecodecamp.org/news/content/images/2022/09/jonatan-pie-3l3RwQdHRHg-unsplash.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    
+  }
+  
+
+
+  
 
 
 
